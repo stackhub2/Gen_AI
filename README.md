@@ -1,16 +1,5 @@
 # AI Declaration Detection in Academic Papers
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-Official code for the paper:
-
-> **Detecting and Analysing AI Usage Declarations in Academic Publications**  
-> *TPDL 2025 — International Conference on Theory and Practice of Digital Libraries*
-
----
-
 ## Overview
 
 This repository provides the full pipeline for detecting, extracting, and analysing AI tool usage declarations in academic papers. We study two corpora:
@@ -23,13 +12,9 @@ We combine three complementary detection methods:
 | Method | Description |
 |--------|-------------|
 | **Joint BERT NER + RE** | Multi-head BERT model for named-entity recognition (tool & usage spans) and relation extraction (tool → contribution role) |
-| **LLM-based extraction** | Few-shot GPT prompting to extract structured AI declaration information |
+| **LLM-based extraction** | Few-shot LLM prompting to extract structured AI declaration information |
 | **Regex + Semantic similarity** | Rule-based pattern matching with position-aware scoring and sentence-transformer embeddings |
 
-**Key findings across 15,409 non-CEUR papers:**
-- 203 papers (1.3 %) explicitly declare AI tool usage
-- 58 unique AI tools identified; ChatGPT (76 papers) and Grammarly (56 papers) are most common
-- Language-enhancement tasks dominate (72.1 % of all role mentions)
 
 ---
 
@@ -234,7 +219,3 @@ See [requirements.txt](requirements.txt). Key dependencies:
 | `PyMuPDF`, `pdfplumber` | PDF parsing |
 
 
-
-## License
-
-This project is released under the [MIT License](LICENSE).
