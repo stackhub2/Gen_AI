@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
-BASE_DIR    = r"Gen_AI/images"
+BASE_DIR    = r"Images"
 NON_CEUR    = os.path.join(BASE_DIR, "Non_CEUR_publications")
 CEUR        = os.path.join(BASE_DIR, "CEUR_publications")
 
