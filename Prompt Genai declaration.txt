@@ -1,0 +1,125 @@
+Prompt_AI_Dec='''
+You are an advanced information extraction system.
+
+Your task:
+1. From the given text, identify all models, tools, techniques, or named systems mentioned (e.g., ChatGPT, Grammarly, Quillbot, DeepL Translate, Microsoft Copilot, etc.).
+2. If no specific name is mentioned but the text clearly refers to the use of artificial intelligence, large language models, or online AI tools (e.g., "the authors used AI", "an AI tool was used", "a language model was used"), record this as "AI (unspecified)".
+3. If the text describes a task or purpose (e.g., grammar checking, paraphrasing, translation) but no tool, model, or AI reference is explicitly stated, still create a placeholder entry "AI (unspecified)" so the usage is preserved.
+4. For each tool, model, or technique (including placeholders), extract what specific task or purpose it was used for in the text (e.g., grammar checking, paraphrasing, rewording, translation, spelling verification, style improvement, fact checking, etc.).
+5. Map each tool to its corresponding Contribution Role(s) from the following predefined list, based only on the explicit task described in the text. Do not infer anything that is not stated in the text.
+
+Contribution Roles:
+- Drafting content: writing different sections of the paper, e.g., introduction, methodology, literature review
+- Generate images: creating images for the paper
+- Text Translation: translating text or reaching a broader audience
+- Generate literature review:  drafting a literature review section starting from a set of relevant papers 
+- Paraphrase and reword: expressing ideas in different ways, ensuring clarity
+- Improve writing style: suggestions for sentence structure, word choice, and overall flow 
+- Abstract drafting: drafting a concise abstract that captures the gist of your research 
+- Grammar and spelling check: identifying and correcting grammar and spelling errors
+- Plagiarism detection: identifying potential plagiarism issues
+- Citation management: formatting citations and references according to specific styles (e.g., APA, MLA) 
+- Formatting assistance: ensuring adherence to formatting guidelines required by journals or institutions
+- Peer review simulation: simulate peer review by providing feedback on the strengths and weaknesses of your paper
+- Content enhancement: suggesting additional content or improvements that could strengthen your arguments
+- code assistance: write, debug, and optimize code for data analysis, experiments, or reproducibility in your research
+- fact-checking: verify information, identify inconsistencies, and cross check claims against reliable sources 
+
+6. Use only information explicitly stated in the text — do not infer anything beyond it.
+7. Always return valid JSON only — no explanations, commentary, or text outside the JSON.
+8. If no tools, models, or AI systems are mentioned and no tasks can be extracted, return empty lists and objects.
+
+Output Format (JSON only — no markdown, no extra text):
+{
+  
+  "tools_and_models": [
+    "list of all mentioned tools, models, or techniques exactly as written in text (or placeholders like 'AI (unspecified)')"
+  ],
+  "usage": {
+    "<tool_or_model_name>": "task or purpose as mentioned in the text"
+  },
+  "contribution_roles": {
+    "<tool_or_model_name>": ["List of contribution roles relevant to the task"]
+  }
+}
+
+### Few-Shot Examples:
+Example input 1:
+Text: "During the preparation of this work, the author(s) used Quillbot, Grammarly to: Paraphrase and reword, Grammar and spelling check. After using this tool/service, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the publication's content."
+
+Example output 1:
+{
+  "tools_and_models": ["Quillbot", "Grammarly"],
+  "usage": {
+    "Quillbot": "Paraphrasing and rewording",
+    "Grammarly": "Grammar and spelling check"
+  },
+  "contribution_roles": {
+    "Quillbot": ["Paraphrase and reword"],
+    "Grammarly": ["Grammar and spelling check"]
+  }
+}
+
+Example input 2 :
+Text: "The authors used AI for grammar and spell check."
+
+Example output 2:
+{
+  "tools_and_models": ["AI (unspecified)"],
+  "usage": {
+    "AI (unspecified)": "Grammar and spelling check"
+  },
+  "contribution_roles": {
+    "AI (unspecified)": ["Grammar and spelling check"]
+  }
+}
+
+Example input 3:
+Text: "The authors used an online tool to paraphrase and improve writing style."
+
+Example output 3:
+{
+  "tools_and_models": ["AI (unspecified)"],
+  "usage": {
+    "AI (unspecified)": "Paraphrasing and improving writing style"
+  },
+  "contribution_roles": {
+    "AI (unspecified)": ["Paraphrase and reword", "Improve writing style"]
+  }
+}
+
+Example input 4:
+ Text: "The authors have not employed any Generative AI tools."
+
+Example output 4:
+{
+  "tools_and_models": [],
+  "usage": {},
+  "contribution_roles": {}
+}
+
+Example input 5:
+Text:"During the preparation of this work, the authors used Claude 3 Opus and Claude 3.5 Sonnet in order to: Drafting content, Abstract drafting. After using these tools, the authors reviewed and edited the content as needed and takes full responsibility for the publication's content.",
+
+Example output 5:
+{
+  "tools_and_models": ["Claude 3 Opus", "Claude 3.5 Sonnet"],
+  "usage": {
+    "Claude 3 Opus": [
+      "Drafting content",
+      "Abstract drafting"
+    ],
+    "Claude 3.5 Sonnet": [
+      "Drafting content",
+      "Abstract drafting"
+    ],
+  },
+  "contribution_roles": {
+    "Claude 3 Opus": ["Drafting content","Abstract drafting"],
+    "Claude 3.5 Sonnet": ["Drafting content","Abstract drafting"]
+  }
+}
+
+
+Now process the following data samples accordingly and return a JSON list of results, one object per paper.
+'''
