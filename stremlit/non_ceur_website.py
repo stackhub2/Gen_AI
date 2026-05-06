@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
-BASE_DIR    = r"C:\Users\A.anjum.INTERN\Desktop\All_work_zbw\Code_scientific_paper_my\TPDL_AI_declarion\output\EDA_non_CEUR"
+BASE_DIR    = r"Gen_AI/images"
 NON_CEUR    = os.path.join(BASE_DIR, "Non_CEUR_publications")
 CEUR        = os.path.join(BASE_DIR, "CEUR_publications")
 
