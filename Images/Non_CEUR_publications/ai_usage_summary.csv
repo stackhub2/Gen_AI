@@ -1,0 +1,15 @@
+Metric,Value
+Total Papers,"15,409"
+Papers Declaring AI Use,203
+Papers Declaring No AI Use,80
+Papers with No Declaration Found,"15,126"
+AI Adoption Rate (%),1.32
+Unique AI Tools,58
+Total AI Tool Uses (unique paper x tool pairs),299
+Average Distinct Tools per Paper (AI users),1.54
+Median Distinct Tools per Paper (AI users),1
+Maximum Tools per Paper,6
+Papers Using Multiple Tools,78
+Multi-tool Rate (%),40.21
+Most Used Tool,ChatGPT
+Most Common Contribution Role,Improve writing style

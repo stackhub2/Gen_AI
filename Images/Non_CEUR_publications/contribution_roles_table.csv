@@ -1,0 +1,16 @@
+Rank,Contribution Role,Mentions,Unique Papers,Category,Top 5 Tools
+1,Improve writing style,159,129,Language Enhancement,"ChatGPT (63), Grammarly (31), Claude 3.7 Sonnet (16), AI (unspecified) (11), Microsoft Copilot (7)"
+2,Grammar and spelling check,113,100,Language Enhancement,"Grammarly (52), ChatGPT (21), DeepL (10), GPT-4 (7), AI (unspecified) (5)"
+3,Paraphrase and reword,38,32,Language Enhancement,"ChatGPT (22), Grammarly (4), Google Gemini 2.5 Pro (3), AI (unspecified) (3), ChatGPT-4 (2)"
+4,code assistance,30,24,Other,"ChatGPT (6), AI (unspecified) (5), ATLAS.ti (3), GitHub Copilot (3), Altair AI Studio (2)"
+5,Drafting content,23,21,Content Generation,"ChatGPT (12), Claude 3.7 Sonnet (3), AI (unspecified) (3), GPT-4o (2), Claude Opus 4.1 (2)"
+6,Content enhancement,15,15,Language Enhancement,"Claude 3.7 Sonnet (10), ChatGPT (3), PECore-G14-448 (1), ChatGPT-4o (1)"
+7,Code assistance,10,7,Technical,"ChatGPT (3), GitHub Copilot (3), LinPEAS (2), GROBID (1), S2ORC (1)"
+8,Generate images,9,8,Visual/Media,"ChatGPT (4), AI (unspecified) (2), Alternative Text Assistant (1), ChatGPT-5.1 (1), Generative AI (1)"
+9,Formatting assistance,9,8,Technical,"ChatGPT (2), Overleaf (2), Claude 3.7 Sonnet (1), Mendeley (1), EndNote (1)"
+10,Text Translation,6,5,Translation,"Google Translate (1), GPT-3.5 (1), ChatGPT (1), AI (unspecified) (1), ChatGPT-4o (1)"
+11,Generate literature review,5,4,Content Generation,"ChatGPT (2), GPT-4o (1), Rayyan (1), ChatGPT-4o (1)"
+12,Citation management,4,3,Technical,"Mendeley (2), Zotero (2)"
+13,Plagiarism detection,4,4,Quality Assurance,"AI (unspecified) (3), Turnitin Originality Check (1)"
+14,Summarizing literature,2,2,Other,"GPT-4o-mini (1), ChatGPT (1)"
+15,fact-checking,1,1,Other,ChatGPT (1)
