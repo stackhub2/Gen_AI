@@ -207,27 +207,6 @@ Each line is a JSON object:
 
 ---
 
-## Model Architecture
-
-```
-Input text
-    │
-    ▼
-BERT encoder (bert-base-uncased / SciBERT)
-    │
-    ├──► Head 1 (BIO NER): [O, B-Tool, I-Tool, B-Usage, I-Usage]
-    │
-    ├──► Head 2 (BIO NER): [O, B-<Category>, I-<Category>, ...]
-    │                       (categories discovered automatically from data)
-    │
-    └──► Head 3 (Span-pair RE): [No_relation, Used_for]
-         Input: mean-pooled Tool span ⊕ mean-pooled Category span
-```
-
-Training loss: `λ₁·L_NER1 + λ₂·L_NER2 + λ₃·L_RE`  
-Default: `λ₁ = λ₂ = 1.0`, `λ₃ = 1.5`
-
----
 
 ## Reproducibility
 
@@ -254,23 +233,7 @@ See [requirements.txt](requirements.txt). Key dependencies:
 | `pandas`, `matplotlib`, `seaborn` | Data analysis & visualisation |
 | `PyMuPDF`, `pdfplumber` | PDF parsing |
 
----
 
-## Citation
-
-If you use this code or data in your research, please cite:
-
-```bibtex
-@inproceedings{anjum2025aideclaration,
-  title     = {Detecting and Analysing AI Usage Declarations in Academic Publications},
-  author    = {Anjum, Aftab and {others}},
-  booktitle = {Proceedings of the International Conference on Theory and
-               Practice of Digital Libraries (TPDL)},
-  year      = {2025},
-}
-```
-
----
 
 ## License
 
