@@ -219,3 +219,6 @@ See [requirements.txt](requirements.txt). Key dependencies:
 | `PyMuPDF`, `pdfplumber` | PDF parsing |
 
 
+# Streamlit app
+https://app-data-analysis-main-htkjrwqnfxbz9hncwkrqoj.streamlit.app/
+
