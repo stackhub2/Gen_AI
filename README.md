@@ -17,7 +17,7 @@ We combine three complementary detection methods:
 
 
 ---
-# Additional results : Streamlit app
+# Additional Results : Streamlit app
 https://app-data-analysis-main-htkjrwqnfxbz9hncwkrqoj.streamlit.app/
 
 ---
