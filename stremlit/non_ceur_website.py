@@ -200,7 +200,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown(
-        "<small style='color:#888;'>TPDL AI Declaration Study<br/>Powered by Streamlit</small>",
+        "<small style='color:#888;'>GenAI Declaration Study<br/>Powered by Streamlit</small>",
         unsafe_allow_html=True,
     )
 
