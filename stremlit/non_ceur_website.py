@@ -677,6 +677,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align:center;padding:1rem 0;color:#888;'>
     <strong>AI Declaration Analysis Dashboard — CEUR &amp; Non-CEUR Publications</strong><br>
-    <small>TPDL AI Declaration Study · Powered by Streamlit</small>
+    <small>AI Declaration Study · Powered by Streamlit</small>
 </div>
 """, unsafe_allow_html=True)
