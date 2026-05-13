@@ -405,6 +405,80 @@ if dataset == "Non-CEUR Publications":
             "Technical and content-generation categories follow at a distance."
         )
 
+        st.markdown("""
+        <div style="background:#f8f9fa;border:1px solid #e0e0e0;border-radius:10px;padding:1.2rem 1.5rem;margin-top:1.2rem;">
+            <h4 style="margin:0 0 0.8rem;color:#0f3460;">📋 Contribution Role → Category Mapping</h4>
+            <p style="margin:0 0 0.8rem;color:#555;font-size:0.9rem;">
+                Each contribution role identified in the papers is assigned to one of the high-level
+                categories shown in the pie chart above.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        role_mapping = pd.DataFrame([
+            (1,  "Improve writing style",   "Language Enhancement"),
+            (2,  "Grammar and spelling check", "Language Enhancement"),
+            (3,  "Paraphrase and reword",    "Language Enhancement"),
+            (4,  "code assistance",          "Other"),
+            (5,  "Drafting content",         "Content Generation"),
+            (6,  "Content enhancement",      "Language Enhancement"),
+            (7,  "Code assistance",          "Technical"),
+            (8,  "Generate images",          "Visual/Media"),
+            (9,  "Formatting assistance",    "Technical"),
+            (10, "Text Translation",         "Translation"),
+            (11, "Generate literature review", "Content Generation"),
+            (12, "Citation management",      "Technical"),
+            (13, "Plagiarism detection",     "Quality Assurance"),
+            (14, "Summarizing literature",   "Other"),
+            (15, "Fact-checking",            "Other"),
+        ], columns=["Rank", "Contribution Role", "Category"])
+
+        CATEGORY_COLORS = {
+            "Language Enhancement": "#d0e8ff",
+            "Technical":            "#d4f1d4",
+            "Content Generation":   "#ffecd0",
+            "Translation":          "#f0d8ff",
+            "Visual/Media":         "#ffd8e8",
+            "Quality Assurance":    "#fff3cd",
+            "Other":                "#e8e8e8",
+        }
+
+        def highlight_category(row):
+            color = CATEGORY_COLORS.get(row["Category"], "#ffffff")
+            return [f"background-color: {color}"] * len(row)
+
+        st.dataframe(
+            role_mapping.style.apply(highlight_category, axis=1),
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Rank":              st.column_config.NumberColumn("Rank", width="small"),
+                "Contribution Role": st.column_config.TextColumn("Contribution Role", width="large"),
+                "Category":          st.column_config.TextColumn("Category", width="medium"),
+            },
+        )
+
+        st.markdown("""
+        <div style="margin-top:0.8rem;padding:0.8rem 1rem;background:#f0f4ff;border-radius:8px;
+                    border-left:4px solid #0f3460;font-size:0.88rem;color:#444;">
+            <strong>Category colour legend:</strong>
+            &nbsp;
+            <span style="background:#d0e8ff;padding:2px 8px;border-radius:4px;">Language Enhancement</span>
+            &nbsp;
+            <span style="background:#d4f1d4;padding:2px 8px;border-radius:4px;">Technical</span>
+            &nbsp;
+            <span style="background:#ffecd0;padding:2px 8px;border-radius:4px;">Content Generation</span>
+            &nbsp;
+            <span style="background:#f0d8ff;padding:2px 8px;border-radius:4px;">Translation</span>
+            &nbsp;
+            <span style="background:#ffd8e8;padding:2px 8px;border-radius:4px;">Visual/Media</span>
+            &nbsp;
+            <span style="background:#fff3cd;padding:2px 8px;border-radius:4px;">Quality Assurance</span>
+            &nbsp;
+            <span style="background:#e8e8e8;padding:2px 8px;border-radius:4px;">Other</span>
+        </div>
+        """, unsafe_allow_html=True)
+
     # ── Page 7 — Tool–Role Heatmap ────────────────────────────────────────────
     elif page == "7 · Tool–Role Heatmap":
         st.markdown("""
@@ -677,6 +751,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align:center;padding:1rem 0;color:#888;'>
     <strong>AI Declaration Analysis Dashboard — CEUR &amp; Non-CEUR Publications</strong><br>
-    <small>AI Declaration Study · Powered by Streamlit</small>
+    <small>GenAI Declaration Study · Powered by Streamlit</small>
 </div>
 """, unsafe_allow_html=True)
