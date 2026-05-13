@@ -40,7 +40,6 @@ CEUR_FIGURES = {
     "tools_evolution":            os.path.join(CEUR, "fig_tools_evolution_stacked_bars-1.png"),
     "country_ai_rate":            os.path.join(CEUR, "fig1b_country_ai_rate-1.png"),
     "institution_ai_usage":       os.path.join(CEUR, "fig2_institution_ai_usage-1.png"),
-    "temporal_ai_usage_rate":     os.path.join(CEUR, "fig3b_temporal_AI_usage_rate-1.png"),
 }
 
 # ─── CSS ──────────────────────────────────────────────────────────────────────
@@ -195,7 +194,6 @@ with st.sidebar:
                 "C2 · Tools Evolution",
                 "C3 · Country AI Rate",
                 "C4 · Institution AI Usage",
-                "C5 · Temporal AI Usage Rate",
             ],
             label_visibility="collapsed",
         )
@@ -611,7 +609,7 @@ else:
             <li><strong>C2 · Tools Evolution</strong> — how individual AI tools' usage share evolved over time (stacked bars)</li>
             <li><strong>C3 · Country AI Rate</strong> — AI adoption rates per country of affiliation</li>
             <li><strong>C4 · Institution AI Usage</strong> — AI usage breakdown by institution</li>
-            <li><strong>C5 · Temporal AI Usage Rate</strong> — overall AI adoption rate trend over time</li>
+
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -671,20 +669,6 @@ else:
         st.info(
             "**Key finding:** A small number of high-output institutions account for a disproportionate "
             "share of AI-declaring papers, suggesting early adoption is clustered in specific research groups."
-        )
-
-    # ── C5 — Temporal AI Usage Rate ───────────────────────────────────────────
-    elif page == "C5 · Temporal AI Usage Rate":
-        st.markdown("""
-        <div class="section-header-ceur">
-            <h2>📈 Temporal AI Usage Rate (CEUR)</h2>
-            <p>Overall AI declaration rate in CEUR papers as a percentage, plotted over time.</p>
-        </div>""", unsafe_allow_html=True)
-
-        show_figure(CEUR_FIGURES["temporal_ai_usage_rate"])
-        st.info(
-            "**Key finding:** The AI declaration rate in CEUR proceedings climbed from near zero "
-            "in 2022 to several percent by 2024, indicating a rapid normalisation of AI disclosure practices."
         )
 
 
