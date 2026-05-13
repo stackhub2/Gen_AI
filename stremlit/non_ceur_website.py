@@ -23,7 +23,6 @@ NON_CEUR_FIGURES = {
     "tool_role_heatmap":          os.path.join(NON_CEUR, "fig_tool_role_heatmap.png"),
     "country_ai_count":           os.path.join(NON_CEUR, "fig1a_country_ai_count.PNG"),
     "institution_ai_usage":       os.path.join(NON_CEUR, "fig2_institution_ai_usage.png"),
-    "temporal_rate":              os.path.join(NON_CEUR, "fig3b_temporal_rate.png"),
     "tools_by_country":           os.path.join(NON_CEUR, "fig5_top10_tools_by_country_stacked.png"),
     "institution_tool_heatmap":   os.path.join(NON_CEUR, "fig6a_institution_tool_heatmap.png"),
     "institution_role_heatmap":   os.path.join(NON_CEUR, "fig6b_institution_role_heatmap.png"),
