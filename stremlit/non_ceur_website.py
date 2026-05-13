@@ -419,7 +419,7 @@ if dataset == "Non-CEUR Publications":
             (1,  "Improve writing style",   "Language Enhancement"),
             (2,  "Grammar and spelling check", "Language Enhancement"),
             (3,  "Paraphrase and reword",    "Language Enhancement"),
-            (4,  "code assistance",          "Other"),
+            (4,  "code assistance",          "Technical"),
             (5,  "Drafting content",         "Content Generation"),
             (6,  "Content enhancement",      "Language Enhancement"),
             (7,  "Code assistance",          "Technical"),
