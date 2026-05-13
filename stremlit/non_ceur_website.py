@@ -180,10 +180,9 @@ with st.sidebar:
                 "7 · Tool–Role Heatmap",
                 "8 · Country Analysis",
                 "9 · Institution Analysis",
-                "10 · Temporal Trends",
-                "11 · Tools by Country",
-                "12 · Institution Heatmaps",
-                "13 · Data Tables",
+                "10 · Tools by Country",
+                "11 · Institution Heatmaps",
+                "12 · Data Tables",
             ],
             label_visibility="collapsed",
         )
@@ -236,10 +235,9 @@ if dataset == "Non-CEUR Publications":
             <li><strong>7 · Tool–Role Heatmap</strong> — co-occurrence matrix of tools and contribution roles</li>
             <li><strong>8 · Country Analysis</strong> — AI usage counts per country</li>
             <li><strong>9 · Institution Analysis</strong> — AI usage rates by institution</li>
-            <li><strong>10 · Temporal Trends</strong> — AI adoption rate over time</li>
-            <li><strong>11 · Tools by Country</strong> — top-10 tools stacked by country</li>
-            <li><strong>12 · Institution Heatmaps</strong> — co-occurrence heatmaps of institutions vs. tools and vs. roles</li>
-            <li><strong>13 · Data Tables</strong> — raw CSV tables for summary metrics, roles, countries &amp; institutions</li>
+            <li><strong>10 · Tools by Country</strong> — top-10 tools stacked by country</li>
+            <li><strong>11 · Institution Heatmaps</strong> — co-occurrence heatmaps of institutions vs. tools and vs. roles</li>
+            <li><strong>12 · Data Tables</strong> — raw CSV tables for summary metrics, roles, countries &amp; institutions</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -475,23 +473,8 @@ if dataset == "Non-CEUR Publications":
                 mime="text/csv",
             )
 
-    # ── Page 10 — Temporal Trends ─────────────────────────────────────────────
-    elif page == "10 · Temporal Trends":
-        st.markdown("""
-        <div class="section-header">
-            <h2>📈 Temporal AI Adoption Trend</h2>
-            <p>How AI declaration rates in Non-CEUR papers evolved over time.</p>
-        </div>""", unsafe_allow_html=True)
-
-        show_figure(NON_CEUR_FIGURES["temporal_rate"])
-        st.info(
-            "**Key finding:** AI declarations show a clear upward trend, "
-            "reflecting the broader acceleration of LLM adoption in research workflows "
-            "following the public release of ChatGPT in late 2022."
-        )
-
-    # ── Page 11 — Tools by Country ────────────────────────────────────────────
-    elif page == "11 · Tools by Country":
+    # ── Page 10 — Tools by Country ────────────────────────────────────────────
+    elif page == "10 · Tools by Country":
         st.markdown("""
         <div class="section-header">
             <h2>🌐 Top-10 AI Tools by Country (Stacked)</h2>
@@ -506,8 +489,8 @@ if dataset == "Non-CEUR Publications":
             "while DeepL appears more frequently in European countries."
         )
 
-    # ── Page 12 — Institution Heatmaps ───────────────────────────────────────
-    elif page == "12 · Institution Heatmaps":
+    # ── Page 11 — Institution Heatmaps ───────────────────────────────────────
+    elif page == "11 · Institution Heatmaps":
         st.markdown("""
         <div class="section-header">
             <h2>🗺️ Institution Co-occurrence Heatmaps</h2>
@@ -531,8 +514,8 @@ if dataset == "Non-CEUR Publications":
             "concentrated in a subset of research-oriented institutions."
         )
 
-    # ── Page 13 — Data Tables ─────────────────────────────────────────────────
-    elif page == "13 · Data Tables":
+    # ── Page 12 — Data Tables ─────────────────────────────────────────────────
+    elif page == "12 · Data Tables":
         st.markdown("""
         <div class="section-header">
             <h2>📑 Data Tables</h2>
